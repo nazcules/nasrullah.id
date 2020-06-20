@@ -17,7 +17,9 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Bitter' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Merriweather' }
     ]
   },
   /*
@@ -35,8 +37,6 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss'
   ],
@@ -44,22 +44,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt/content
-    '@nuxt/content'
   ],
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {},
-  /*
-  ** Content module configuration
-  ** See https://content.nuxtjs.org/configuration
-  */
-  content: {},
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
