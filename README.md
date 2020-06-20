@@ -1,5 +1,5 @@
 # nasrullah.id
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4217621f-823e-4971-a5e1-90a809303c6f/deploy-status)](https://app.netlify.com/sites/nasrullah/deploys)
 ## Build Setup
 
 ```bash
