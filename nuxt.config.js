@@ -43,7 +43,14 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: [],
+  modules: [
+    ['@dukanify/nuxt-multiple-facebook-pixel-module', {
+      /* module options */
+      track: 'PageView',
+      pixelId: ['2559850577360897', '330609454291424'],
+      disabled: false
+    }]
+  ],
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
