@@ -2,7 +2,8 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">nasrullah.id</h1>
+      <h1 class="title">www.nasrullah.id</h1>
+      <h3 class="subtitle">Selamat Datang di Welcome</h3>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
