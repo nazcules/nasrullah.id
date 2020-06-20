@@ -44,7 +44,13 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    'nuxt-facebook-pixel-module'
+    'nuxt-facebook-pixel-module',
+    ['nuxt-facebook-pixels-module', {
+      /* module options */
+      track: 'PageView',
+      pixelId: ['2559850577360897', '330609454291424'], // or 'FACEBOOK_PIXEL_ID_1, FACEBOOK_PIXEL_ID_2' useful when process.env.FACEBOOK_PIXELS
+      disabled: false
+    }]
   ],
   facebook: {
     track: 'PageView',
