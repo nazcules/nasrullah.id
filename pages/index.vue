@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">www.nasrullah.id</h1>
-      <h3 class="subtitle">Selamat Datang di Welcome</h3>
+      <h2 class="subtitle">Selamat Datang di Welcome</h2>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
