@@ -44,6 +44,13 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    [
+      'nuxt-facebook-pixel-module', {
+        track: 'PageView',
+        pixelId: process.env.id_pixel_facebook,
+        disabled: false
+      }
+    ]
   ],
   /*
   ** Build configuration
