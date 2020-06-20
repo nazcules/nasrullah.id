@@ -44,11 +44,11 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    ['@dukanify/nuxt-multiple-facebook-pixel-module', {
+    ['nuxt-facebook-pixel-module', {
       /* module options */
       track: 'PageView',
-      pixelId: ['2559850577360897', '330609454291424'],
-      disabled: false
+      pixelId: '2559850577360897',
+      disabled: true
     }]
   ],
   /*

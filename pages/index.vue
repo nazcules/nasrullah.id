@@ -28,6 +28,9 @@ import Logo from "~/components/Logo.vue";
 export default {
   components: {
     Logo
+  },
+  mounted() {
+    this.$fb.enable();
   }
 };
 </script>
