@@ -9,13 +9,25 @@
         />
       </li>
     </ul>
+    <p>
+      <ColorScheme placeholder="..." tag="span">
+        Color mode:
+        <b>{{ $colorMode.preference }}</b>
+        <span v-if="$colorMode.preference === 'system'">
+          (
+          <i>{{ $colorMode.value }}</i> mode detected)
+        </span>
+      </ColorScheme>
+    </p>
   </div>
 </template>
+
 <script>
 import IconSystem from "@/assets/icons/system.svg?inline";
 import IconLight from "@/assets/icons/light.svg?inline";
 import IconDark from "@/assets/icons/dark.svg?inline";
 import IconSepia from "@/assets/icons/sepia.svg?inline";
+
 export default {
   components: {
     IconSystem,
@@ -30,7 +42,7 @@ export default {
   },
   methods: {
     getClasses(color) {
-      // Does not set classes on ssr when preference is system (because we don't know the preference until client-side)
+      // Does not set classes on ssr preference is system (because we know them on client-side)
       if (this.$colorMode.unknown) {
         return {};
       }
@@ -42,6 +54,7 @@ export default {
   }
 };
 </script>
+
 <style scoped>
 ul {
   list-style: none;
@@ -51,6 +64,11 @@ ul {
 ul li {
   display: inline-block;
   padding: 5px;
+}
+p {
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 20px;
 }
 .feather {
   position: relative;

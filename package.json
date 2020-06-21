@@ -3,6 +3,15 @@
   "description": "My Personal Blog",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://github.com/nazcules/nasrullah.id#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nazcules/nasrullah.id.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nazcules/nasrullah.id/issues"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

@@ -2,7 +2,9 @@
   <div class="container">
     <div>
       <logo />
-      <ColorModePicker />
+      <div>
+        <ColorModePicker />
+      </div>
       <h1 class="title">www.nasrullah.id</h1>
       <h2 class="subtitle">Selamat Datang di Welcome</h2>
       <div class="links">
@@ -25,11 +27,23 @@
 
 <script>
 import Logo from "~/components/Logo.vue";
-import ColorModePicker from '@/components/ColorModePicker'
+import ColorModePicker from "@/components/ColorModePicker";
 export default {
   components: {
     Logo,
     ColorModePicker
+  },
+  head: {
+    title: "Nasrullah.id",
+    meta: [
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        hid: "description",
+        name: "description",
+        content: "Nasrullah.id - My Personal Website"
+      }
+    ]
   },
   mounted() {
     this.$fb.enable();
@@ -62,7 +76,6 @@ export default {
 }
 
 .subtitle {
-  font-family: "Merriweather", serif;
   font-weight: 300;
   font-size: 2rem;
   color: #526488;
