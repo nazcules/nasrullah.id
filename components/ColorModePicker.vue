@@ -1,94 +1,38 @@
 <template>
-  <div>
-    <ul>
-      <li v-for="color of colors" :key="color">
-        <component
-          :is="`icon-${color}`"
-          @click="$colorMode.preference = color"
-          :class="getClasses(color)"
+  <div class="switch">
+    <button @click="toggle" class>
+      <svg
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        class="w-8 h-8"
+      >
+        <path
+          d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
         />
-      </li>
-    </ul>
-    <p>
-      <ColorScheme placeholder="..." tag="span">
-        Color mode:
-        <b>{{ $colorMode.preference }}</b>
-        <span v-if="$colorMode.preference === 'system'">
-          (
-          <i>{{ $colorMode.value }}</i> mode detected)
-        </span>
-      </ColorScheme>
-    </p>
+      </svg>
+    </button>
   </div>
 </template>
 
 <script>
-import IconSystem from "@/assets/icons/system.svg?inline";
-import IconLight from "@/assets/icons/light.svg?inline";
-import IconDark from "@/assets/icons/dark.svg?inline";
-import IconSepia from "@/assets/icons/sepia.svg?inline";
-
 export default {
-  components: {
-    IconSystem,
-    IconLight,
-    IconDark,
-    IconSepia
-  },
-  data() {
-    return {
-      colors: ["system", "light", "dark", "sepia"]
-    };
-  },
   methods: {
-    getClasses(color) {
-      // Does not set classes on ssr preference is system (because we know them on client-side)
-      if (this.$colorMode.unknown) {
-        return {};
-      }
-      return {
-        preferred: color === this.$colorMode.preference,
-        selected: color === this.$colorMode.value
-      };
+    toggle() {
+      this.$colorMode.preference =
+        this.$colorMode.value == "light" ? "dark" : "light";
     }
   }
 };
 </script>
 
 <style scoped>
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-ul li {
-  display: inline-block;
-  padding: 5px;
-}
-p {
-  margin: 0;
-  padding-top: 5px;
-  padding-bottom: 20px;
-}
-.feather {
-  position: relative;
-  top: 0px;
-  cursor: pointer;
-  padding: 7px;
-  background-color: var(--bg-secondary);
-  border: 2px solid var(--border-color);
-  margin: 0;
-  border-radius: 5px;
-  transition: all 0.1s ease;
-}
-.feather:hover {
-  top: -3px;
-}
-.feather.preferred {
-  border-color: var(--color-primary);
-  top: -3px;
-}
-.feather.selected {
-  color: var(--color-primary);
+.switch {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 </style>

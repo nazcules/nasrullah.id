@@ -2,9 +2,9 @@
   <div class="container">
     <div>
       <logo />
-      <div>
+      <client-only>
         <ColorModePicker />
-      </div>
+      </client-only>
       <h1 class="title">www.nasrullah.id</h1>
       <h2 class="subtitle">Selamat Datang di Welcome</h2>
       <div class="links">
