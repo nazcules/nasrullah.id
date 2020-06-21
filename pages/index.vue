@@ -2,6 +2,7 @@
   <div class="container">
     <div>
       <logo />
+      <ColorModePicker />
       <h1 class="title">www.nasrullah.id</h1>
       <h2 class="subtitle">Selamat Datang di Welcome</h2>
       <div class="links">
@@ -24,10 +25,11 @@
 
 <script>
 import Logo from "~/components/Logo.vue";
-
+import ColorModePicker from '@/components/ColorModePicker'
 export default {
   components: {
-    Logo
+    Logo,
+    ColorModePicker
   },
   mounted() {
     this.$fb.enable();
